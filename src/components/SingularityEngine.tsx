@@ -141,7 +141,7 @@ export default function SingularityEngine() {
     window.addEventListener('mousemove', handleMouseMove)
 
     // Animation loop
-    let startTime = performance.now()
+    const startTime = performance.now()
     const animate = () => {
       frameRef.current = requestAnimationFrame(animate)
       const elapsed = (performance.now() - startTime) * 0.001

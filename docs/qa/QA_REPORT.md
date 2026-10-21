@@ -107,3 +107,12 @@ It is not worth focusing heavy effort here until the contact form works, because
 | 8 | Add a favicon, OG/Twitter meta tags, `robots.txt` and a sitemap | 1 h |
 | 9 | Document and automate deployment (Vercel/Pages config), and record the live URL | 1 h |
 | 10 | Run `npm audit fix`, refresh browserslist and add a LICENSE | 20 min |
+
+## Changes made on this branch
+- **`.gitignore` added** (node_modules, dist, env files, logs, editor/OS, caches) and **`.env.example` added** (placeholder; no vars required today). Fixes H3.
+- **README**: added Getting Started (verified commands), an accurate project structure, the real tech stack, a Related Repositories note and an honest status. Fixes M5.
+- **`src/App.tsx`**: the GSAP ticker callback is now a named function, so cleanup removes the same function it added. Fixes the M1 leak and the `no-explicit-any` lint error.
+- **`src/components/SingularityEngine.tsx:144`**: `let` → `const` (prefer-const).
+- **`package.json` / `package-lock.json`**: package name `my-app` → `rins-enterprises-v2`.
+- Verified after the changes: `npm run build` ✅. Lint went from 11 to 9 errors; the remaining 9 are listed in M2 (TechStack purity plus the unused shadcn files).
+- Not done (out of tier-B scope): contact form backend, dead-code removal, dependency upgrades and bundle splitting.

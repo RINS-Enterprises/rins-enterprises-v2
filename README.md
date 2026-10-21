@@ -17,11 +17,28 @@ This project focuses on creating a fast, scalable, and conversion-oriented front
 
 ## 🛠 Tech Stack
 
-- React
-- TypeScript
-- Vite
+- React 19 + TypeScript
+- Vite 7
+- Tailwind CSS 3 + shadcn/ui
+- GSAP (ScrollTrigger) + Lenis smooth scroll
+- three.js (3D hero)
 - ESLint
-- Modern Component Architecture
+
+---
+
+## ▶️ Getting Started
+
+Requires Node.js 20+.
+
+```bash
+npm ci            # install dependencies
+npm run dev       # dev server on http://localhost:3000
+npm run build     # type-check + production build into dist/
+npm run preview   # serve the production build locally
+npm run lint      # ESLint
+```
+
+No environment variables are needed today (see `.env.example`).
 
 ---
 
@@ -29,12 +46,24 @@ This project focuses on creating a fast, scalable, and conversion-oriented front
 
 ```bash
 src/
- ├── components/     # Reusable UI components
- ├── pages/          # Route-level pages
- ├── assets/         # Static assets
- ├── styles/         # Global styling
- └── main.tsx        # Application entry point
+ ├── App.tsx            # Page composition + Lenis/GSAP smooth-scroll setup
+ ├── main.tsx           # Application entry point
+ ├── index.css          # Tailwind + global styles
+ ├── sections/          # Page sections (Hero, Mission, Services, Projects, Process,
+ │                      #   TechStack, Founders, Vision, Contact)
+ ├── components/        # Navigation, Footer, SingularityEngine (three.js hero)
+ │   └── ui/            # shadcn/ui component library (scaffolded, mostly unused)
+ ├── hooks/             # Custom hooks
+ └── lib/               # Utilities
+public/images/          # Site imagery
 ```
+
+---
+
+## 🔗 Related Repositories
+
+This repo is the **v2 single-page marketing site** for RINS Enterprises (static frontend only, no backend).
+`rins-enterprises-website` covers the same purpose. See `docs/qa/QA_REPORT.md` for the overlap analysis.
 
 ---
 
@@ -75,4 +104,5 @@ This project helped strengthen:
 
 ## 📌 Status
 
-Active development
+Static showcase site, last updated May 2026. The contact form is UI-only and is not yet connected to a backend.
+See `docs/qa/QA_REPORT.md` for the audit and next steps.
