@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Linkedin, Twitter, Mail, Code2, FlaskConical } from 'lucide-react'
+import { Linkedin, Twitter, Mail, Code2 } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,15 +14,6 @@ const founders = [
     image: '/images/founder-isuru.jpg',
     icon: Code2,
     expertise: ['AI Systems', 'Automation', 'Full-Stack Dev'],
-  },
-  {
-    name: 'Dr. Thilini Madakumbura',
-    role: 'Co-Founder & Research Specialist',
-    description:
-      'A research-focused professional with a background in microbiology and scientific research, contributing analytical thinking, research methodology, innovation-driven perspectives, and long-term strategic vision.',
-    image: '/images/founder-thilini.jpg',
-    icon: FlaskConical,
-    expertise: ['Research', 'Strategy', 'Innovation'],
   },
 ]
 
@@ -78,16 +69,15 @@ export default function FoundersSection() {
             Leadership
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-cream mb-4">
-            Meet the <span className="gradient-text-gold">Founders</span>
+            Meet the <span className="gradient-text-gold">Founder</span>
           </h2>
           <p className="text-cream/50 max-w-2xl mx-auto text-sm lg:text-base leading-relaxed">
-            A fusion of technical innovation and research-driven thinking, building
-            the future of intelligent automation from Sri Lanka.
+            Building the future of intelligent automation from Sri Lanka.
           </p>
         </div>
 
         {/* Founders Grid */}
-        <div className="founders-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="founders-grid grid grid-cols-1 gap-8 lg:gap-12 max-w-3xl mx-auto">
           {founders.map((founder) => (
             <div
               key={founder.name}
